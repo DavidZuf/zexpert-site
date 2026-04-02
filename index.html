@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Z Expert Automotive Service</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <img src="images/logo.png" alt="Z Expert Automotive Service" class="nav__logo-img" />
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#staff">Team</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact" class="nav__cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__layout">
+      <div class="hero__content">
+        <div class="hero__logo-wrap">
+          <img src="images/logo.png" alt="Z Expert Automotive Service" class="hero__logo-img" />
+        </div>
+        <p class="hero__tagline">Expert diagnostics. Honest repairs. Done right the first time.</p>
+        <div class="hero__actions">
+          <a href="tel:+13103967200" class="btn btn--primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
+            Call Now
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Describe Your Problem
+          </a>
+        </div>
+      </div>
+      <div class="hero__car-wrap">
+        <canvas id="carCanvas"></canvas>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">What We Do</span>
+        <h2 class="section__title">Our Services</h2>
+        <p class="section__desc">From routine maintenance to complex repairs — we handle it all with precision.</p>
+      </div>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">🔧</div>
+          <h3>General Mechanics</h3>
+          <p>Engine diagnostics, oil changes, brake service, and full tune-ups for all makes and models.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">⚙️</div>
+          <h3>Transmission</h3>
+          <p>Automatic and manual transmission repair, fluid flushes, and complete rebuilds.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🛞</div>
+          <h3>Suspension & Steering</h3>
+          <p>Wheel alignment, shocks, struts, tie rods — handling problems solved right.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">❄️</div>
+          <h3>A/C & Heating</h3>
+          <p>Refrigerant recharge, compressor replacement, and full climate system diagnostics.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🔋</div>
+          <h3>Electrical Systems</h3>
+          <p>Battery, alternator, starter, wiring issues, and check engine light diagnostics.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">🚗</div>
+          <h3>Pre-Purchase Inspection</h3>
+          <p>Thinking of buying a used car? Let us inspect it before you commit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ── -->
+  <section class="section why">
+    <div class="container why__inner">
+      <div class="why__text">
+        <span class="section__label">Why Z Expert</span>
+        <h2 class="section__title">Honest work.<br/>Fair prices.</h2>
+        <p>We believe in transparency. You'll always know what's being done on your vehicle and why — no surprises on the invoice. Our techs are trained, certified, and passionate about cars.</p>
+        <ul class="why__list">
+          <li><span class="check">✓</span> Free diagnostic consultation</li>
+          <li><span class="check">✓</span> Written estimate before any work begins</li>
+          <li><span class="check">✓</span> Warranty on parts & labour</li>
+          <li><span class="check">✓</span> All makes & models welcome</li>
+        </ul>
+      </div>
+      <div class="why__visual">
+        <div class="why__badge">
+          <span class="why__badge-num">10+</span>
+          <span class="why__badge-label">Years of Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STAFF ── -->
+  <section class="section staff" id="staff">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">The Team</span>
+        <h2 class="section__title">Meet Our Mechanics</h2>
+        <p class="section__desc">Passionate professionals who treat your car like their own.</p>
+      </div>
+      <div class="staff__grid">
+        <div class="staff-card">
+          <div class="staff-card__photo staff-card__photo--placeholder">
+            <span>Photo</span>
+          </div>
+          <div class="staff-card__info">
+            <h3>Your Name Here</h3>
+            <p class="staff-card__role">Owner & Master Technician</p>
+            <p class="staff-card__bio">20+ years of hands-on experience. Specializes in engine rebuilds and diagnostics.</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-card__photo staff-card__photo--placeholder">
+            <span>Photo</span>
+          </div>
+          <div class="staff-card__info">
+            <h3>Team Member</h3>
+            <p class="staff-card__role">Suspension & Brake Specialist</p>
+            <p class="staff-card__bio">Certified technician with a passion for precision and safety.</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-card__photo staff-card__photo--placeholder">
+            <span>Photo</span>
+          </div>
+          <div class="staff-card__info">
+            <h3>Team Member</h3>
+            <p class="staff-card__role">Electrical & Diagnostics</p>
+            <p class="staff-card__bio">Expert in modern vehicle computer systems and electrical troubleshooting.</p>
+          </div>
+        </div>
+      </div>
+      <p class="staff__note">* Add your real team names and photos — just drop images into the <code>images/</code> folder and update the HTML.</p>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Our Work</span>
+        <h2 class="section__title">Gallery</h2>
+        <p class="section__desc">A look at some of the jobs we're proud of.</p>
+      </div>
+      <div class="gallery__grid" id="galleryGrid">
+        <div class="gallery-item"><img src="images/gallery/photo1.jpg" alt="Z Expert garage — silver Datsun 280Z" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo2.jpg" alt="Z Expert — red Datsun at the shop" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo3.jpg" alt="Mechanic at work" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo4.jpg" alt="Mechanic doing undercarriage work" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo5.jpg" alt="Black Datsun 280ZX at Z Expert" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo6.jpg" alt="Z Expert shop" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo7.jpg" alt="Red Datsun 240Z front" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo8.jpg" alt="Blue Datsun in the shop" /></div>
+        <div class="gallery-item"><img src="images/gallery/photo9.jpg" alt="Nissan engine bay" /></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox__close" id="lightboxClose">✕</button>
+      <button class="lightbox__prev" id="lightboxPrev">&#8592;</button>
+      <button class="lightbox__next" id="lightboxNext">&#8594;</button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery" />
+    </div>
+  </section>
+
+  <!-- ── REVIEWS ── -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">What People Say</span>
+        <h2 class="section__title">Customer Reviews</h2>
+        <div class="reviews__rating-summary">
+          <div class="reviews__stars">★★★★★</div>
+          <span class="reviews__score">5.0</span>
+          <span class="reviews__platform">Google Reviews</span>
+          <span class="reviews__sep">·</span>
+          <span class="reviews__platform">5/5 on Facebook</span>
+        </div>
+      </div>
+      <div class="reviews__grid">
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote class="review-card__quote">
+            "Transparent price, a passion for cars, nice people."
+          </blockquote>
+          <div class="review-card__author">
+            <div class="review-card__avatar">Q</div>
+            <div>
+              <strong>Google Review</strong>
+              <span>via Google</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote class="review-card__quote">
+            "No BS service, highly recommend."
+          </blockquote>
+          <div class="review-card__author">
+            <div class="review-card__avatar">★</div>
+            <div>
+              <strong>Google Review</strong>
+              <span>via Google</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote class="review-card__quote">
+            "Z Expert Automotive is now my only to go place when I need work done to my Z."
+          </blockquote>
+          <div class="review-card__author">
+            <div class="review-card__avatar">Z</div>
+            <div>
+              <strong>Google Review</strong>
+              <span>via Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__cta">
+        <a href="https://www.google.com/maps/place/Z+Expert+Automotive+Service" target="_blank" rel="noopener" class="btn btn--primary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          View All Google Reviews
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <span class="section__label">Get In Touch</span>
+        <h2 class="section__title">We're Here to Help</h2>
+        <p>Describe what's going on with your vehicle and we'll get back to you as soon as possible. Prefer to talk? Just call us.</p>
+
+        <div class="contact__details">
+          <a href="tel:+13103967200" class="contact__detail-item">
+            <div class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
+            </div>
+            <div>
+              <strong>Call Us</strong>
+              <span>(310) 396-7200</span>
+            </div>
+          </a>
+          <a href="https://maps.google.com/?q=11215+Venice+Blvd+Los+Angeles+CA+90066" target="_blank" rel="noopener" class="contact__detail-item">
+            <div class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <strong>Location</strong>
+              <span>11215 Venice Blvd.<br/>Los Angeles, CA 90066</span>
+            </div>
+          </a>
+          <div class="contact__detail-item">
+            <div class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.01 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            </div>
+            <div>
+              <strong>Hours</strong>
+              <span>Mon–Fri: 8 AM – 5 PM<br/>Sat–Sun: Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <h3>Describe Your Problem</h3>
+        <div class="form-group">
+          <label for="name">Your Name <span class="req">*</span></label>
+          <input type="text" id="name" name="name" placeholder="John Smith" required />
+          <span class="form-error" id="nameError"></span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(514) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            <span class="form-error" id="emailError"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="vehicle">Vehicle</label>
+          <input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2018 Honda Civic" />
+        </div>
+        <div class="form-group">
+          <label for="problem">Describe the Problem <span class="req">*</span></label>
+          <textarea id="problem" name="problem" rows="5" placeholder="Tell us what's happening — noises, warning lights, symptoms, when it started..." required></textarea>
+          <span class="form-error" id="problemError"></span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        <div class="form-success" id="formSuccess">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Message sent! We'll be in touch soon.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo.png" alt="Z Expert Automotive Service" class="footer__logo-img" />
+      </div>
+      <p class="footer__copy">&copy; 2026 Z Expert Automotive Service. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="module" src="car3d.js"></script>
+</body>
+</html>
