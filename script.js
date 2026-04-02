@@ -64,6 +64,18 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') nextImage();
 });
 
+/* ── LIGHTBOX: touch swipe (iPhone) ── */
+let touchStartX = 0;
+lightbox.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+lightbox.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) < 40) return;
+  if (dx < 0) nextImage();
+  else prevImage();
+}, { passive: true });
+
 /* ── CONTACT FORM ── */
 const form        = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
